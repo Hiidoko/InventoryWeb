@@ -1,0 +1,52 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="app-shell">
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-logo">In</span>
+      <div class="brand-meta">
+        <h1>Inventory Flow</h1>
+        <p>Monitoramento inteligente do estoque e margem</p>
+      </div>
+    </div>
+    <nav class="app-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3.5" y="4.5" width="17" height="15" rx="3"></rect>
+            <path d="M3.5 9.5h17"></path>
+            <path d="M8 13h3"></path>
+          </svg>
+        </span>
+        Estoque
+      </a>
+      <a routerLink="/new" routerLinkActive="active">
+        <span class="nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 5v14" stroke-linecap="round"></path>
+            <path d="M5 12h14" stroke-linecap="round"></path>
+            <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
+          </svg>
+        </span>
+        Novo Produto
+      </a>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <section class="glass-panel">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>© {{ title() }} · Gestão em tempo real com dados do inventário.</span>
+  </footer>
+</div>
