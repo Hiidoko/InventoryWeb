@@ -6,8 +6,8 @@ export interface Product {
   purchasePrice: number;
   salePrice: number;
   quantity: number;
-  createdAt: string; // ISO string
-  updatedAt: string; // ISO string
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface ProductCreateDTO {

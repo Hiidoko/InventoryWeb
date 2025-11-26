@@ -17,7 +17,6 @@ export function productsRouter(inventory: InventoryService) {
     const statusValue = typeof status === 'string' && ['low', 'healthy', 'all'].includes(status)
       ? (status as 'low' | 'healthy' | 'all')
       : undefined;
-    // Se não houver parâmetros, retorna lista simples para compatibilidade
     if (!search && !maxUnits && !page && !pageSize && !statusValue) {
       const products = await inventory.list();
       res.json(products);

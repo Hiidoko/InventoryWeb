@@ -840,6 +840,7 @@ export class ProductListComponent {
     this.lowStock = this.productService.lowStock;
     this.load();
     this.refreshReport();
+    this.refreshAnalytics();
     effect(() => { /* react to page changes */ });
   }
 
@@ -865,22 +866,29 @@ export class ProductListComponent {
   async inc(p: Product, qty: number) {
     await this.productService.update(p.id, { quantity: p.quantity + qty });
     this.refreshReport();
+    this.refreshAnalytics();
   }
 
   async dec(p: Product, qty: number) {
     if (p.quantity - qty < 0) return;
     await this.productService.update(p.id, { quantity: p.quantity - qty });
     this.refreshReport();
+    this.refreshAnalytics();
   }
 
   async remove(p: Product) {
     if (!confirm('Excluir produto?')) return;
     await this.productService.delete(p.id);
     this.refreshReport();
+    this.refreshAnalytics();
   }
 
   async refreshReport() {
     await this.productService.fetchReport();
+  }
+
+  async refreshAnalytics() {
+    await this.productService.fetchAdvancedReport();
   }
 
   openLot(product: Product) {
@@ -916,6 +924,7 @@ export class ProductListComponent {
     }
     await this.productService.update(this.lotTarget.id, { quantity: nextQuantity });
     await this.refreshReport();
+    await this.refreshAnalytics();
     this.closeLot();
   }
 
@@ -964,6 +973,7 @@ export class ProductListComponent {
       salePrice: parsedSale
     });
     await this.refreshReport();
+    await this.refreshAnalytics();
     this.closeEdit();
   }
 

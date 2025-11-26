@@ -1,5 +1,5 @@
 export interface Product {
-  id: string; // UUID interno
+  id: string;
   name: string;
   sku: string;
   category: string;

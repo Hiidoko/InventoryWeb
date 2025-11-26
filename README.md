@@ -93,8 +93,6 @@ MONGO_DB_NAME=inventory-app
 5. **Expandir features**: implementar dashboard grafico, exportacao e autenticacao conforme objetivos pessoais.
 
 ## Roadmap Futuro
-- Visualizacoes graficas (charts) para indicadores avancados.
-- Exportacao em CSV/PDF com templates personalizaveis.
 - Controle de acesso com JWT e perfis por papel.
 - Auditoria de movimentacoes e integracao com ERPs ficticios.
 
