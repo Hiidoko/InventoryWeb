@@ -9,7 +9,8 @@ Este repositorio apresenta um estudo pratico de gestao de estoque construido int
 - Cadastro, edicao e exclusao de produtos com atualizacao imediata do dashboard.
 - Modal de ajuste de lotes (entrada/saida) com previsao de saldo projetado.
 - Indicadores financeiros (valor total, receita e lucro potenciais) e alerta de baixo estoque.
-- Relatorio avancado gerado via agregacoes MongoDB (margem por categoria, giro de estoque, projecao mensal).
+- Relatorio avancado gerado via agregacoes MongoDB (margem por categoria, giro de estoque, projecao mensal), acessivel pela rota `/dashboard`.
+- Exportacao de insights do dashboard em CSV e PDF diretamente do frontend.
 - Base preparada para evolucao: dashboard grafico, exportacao e autenticacao.
 
 ## Arquitetura e Stack
@@ -83,7 +84,11 @@ MONGO_DB_NAME=inventory-app
 - **Frontend**
   - `npm start`: `ng serve` com recarregamento.
   - `npm run build`: build de producao.
-  - `npm test`: Vitest/JSDOM configurado para evolucoes futuras.
+  - `npm test`: executa Vitest com TestBed configurado para componentes standalone e rotas Angular.
+
+## Dicas de Troubleshooting
+- Se o editor exibir erro falso em `import { AnalyticsDashboardComponent } ...`, reinicie o servidor TypeScript ou rode `npm run build` para limpar o cache da linguagem.
+- Ao criar novos testes que utilizam `RouterLink`/`RouterOutlet`, lembre-se de prover as rotas (por exemplo com `provideRouter(routes)` ou `RouterTestingModule`).
 
 ## Roteiro Sugerido de Estudo
 1. **Explorar CRUD**: criar produtos, ajustar lotes e validar alertas de estoque.
